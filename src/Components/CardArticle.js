@@ -11,4 +11,4 @@ function CardArticle (props) {
     )
 }
 
-export default CardArticle
+export {CardArticle}

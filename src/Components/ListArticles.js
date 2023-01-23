@@ -1,5 +1,4 @@
-import React from 'react'
-import CardArticle from './CardArticle'
+import {CardArticle} from './CardArticle'
 
 function ListArticles (props) {
     if(!props){return <div><h1>Pas d'article</h1></div>}
