@@ -1,6 +1,10 @@
 import logo from './logo.svg'
 import './App.css'
-import {ListArticles, TestComponent} from './Components'
+import {
+  ListArticles, 
+  TestComponent, 
+  FormDelivery
+} from './Components'
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,8 +34,9 @@ function App() {
           <p>
             Edit <code>src/App.js</code> and Bonjour save to reload.
             <Routes>
+              <Route path='/Delivery' element={<FormDelivery />} />
               <Route path='/List' element={<ListArticles articles={fakeDate}/>} />
-              <Route path='/Test' element={<TestComponent functionClick={addSomePoint} />}/>
+              <Route path='/Test' element={<TestComponent functionClick={addSomePoint} points={point} />}/>
               <Route path='/Pomme' element={<h1>Quel idée des pommes sur une pizza ?!</h1>}/>
             </Routes> 
           </p>
