@@ -36,11 +36,14 @@ const FormDelivery = (props) => {
     // Read : city
     // Update : setCity
     useEffect(()=> {
-        if (!StateTypes.number(zipCode)) return setError('Mauvais Code Postal')
+        return !StateTypes.number(zipCode) ?null :setError('Mauvais Code Postal')
     }, [zipCode])
+    useEffect(()=>{
+        return !StateTypes.string(city) ?null :setError('Ville incorrect')
+    }, [city])
 
     const handleZipChange = (e)=> {
-        if (isNaN(e.target.value)){
+        if (!isNaN(e.target.value)){
             if (e.target.value.length === 5){
                 const url = `https://apicarto.ign.fr/api/codes-postaux/communes/${e.target.value}`
                 fetch(url)
@@ -83,7 +86,7 @@ const FormDelivery = (props) => {
             {error && <p>{error}</p>}
             <label for='zipcode'>Code Postal : </label>
             <input
-                type='text'
+                type='number'
                 name='zipcode'
                 value={zipCode}
                 onChange={handleZipChange}
