@@ -22,7 +22,8 @@ const fakeDate = [
   {name : 'Calzone (surgelé Lidl)', price: 3000}
 ]
 let point = 0
-
+//API Serveur => APP React Client
+//API Serveur => Servir APP React => Client
 const addSomePoint = () => {
   point = point + 1
   console.log(point)
